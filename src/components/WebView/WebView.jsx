@@ -12,16 +12,19 @@ class WebView extends Component {
   }
   componentDidMount() {
     window.addEventListener('resize', this.onResize)
-    this.setState({size: window.innerwidth > 1000 ? 'S' : 'L'})
+    this.onResize()
   }
   onResize = () => {
     const newSize = window.innerWidth
     const { size } = this.state
-    if (newSize > 1000 && size !== 'L') {
+    if (newSize > 1400 && size !== 'L') {
       this.setState({ size: 'L' })
+    } else if( newSize >= 1000 && newSize <= 1400 && size !== 'M') {
+      this.setState({ size: 'M' })
     } else if( newSize < 1000 && size !== 'S') {
-      this.setState({ size: 'S' })
+      this.setState({ size: 'S'})
     }
+    console.log(size)
   }
   handleChange = (newPage) => {
     this.setState({currentPage: newPage})
@@ -30,7 +33,7 @@ class WebView extends Component {
     const { currentPage, size } = this.state
     return (
       <div className="App">
-        <Menu onLogoClick={() => this.handleChange('home')}/>
+        <Menu onLogoClick={() => this.handleChange('home')} onItemClick={this.handleChange} size={size}/>
         {currentPage === 'home' ? (
           <ListArticle onChange={this.handleChange} size={size}/>
         ):(

@@ -7,12 +7,12 @@ import { useArticleName } from '../../hooks/articlesHooks'
 
 // Component rendering
 const Menu = (props) => {
-  const { onLogoClick } = props
+  const { onLogoClick, onItemClick, size } = props
 
   const listItem = useArticleName([{title: 'test'}])
-
+  const menuItemClass = (size === 'S') ? 'mobileMenu' : 'stdMenu'
   const displayableListItem = listItem.map(item => 
-    <li key={item.title}>{item.title}</li>
+    <li key={item.title} className={menuItemClass} onClick={() => onItemClick(item.id)}>{item.title}</li>
   )
 
   return (

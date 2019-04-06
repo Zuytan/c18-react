@@ -2,8 +2,8 @@ const responseTime = 1000
 
 const getAllArticlesName = (callback) => {
   const articleNames = [
-    { title: 'Page 1' },
-    { title: 'Page 2' },
+    { id: 1, title: 'Page 1' },
+    { id: 2, title: 'Page 2' },
   ]
   setTimeout(() => {
     callback(articleNames)
@@ -13,11 +13,13 @@ const getAllArticlesName = (callback) => {
 const getAllArticles = (callback) => {
   const articles = [
     { 
+      id: 1,
       title: 'Page 1', 
       description:'mozuebflqizjbflkzjbfluiezbj iuz leufihqlskjbfl euf liqulu fliuql uehlfi hqzliuef quzeflu zhleuqlu eh qlulfiuqe l',
       pictures: [{url: '/images/img1.png', alt:'img1'}]
     },
     { 
+      id: 2,
       title: 'Page 2', 
       description:'mozuebflqizjbflkzjbfluiezbj iuz leufihqlskjbfl euf liqulu fliuql uehlfi hqzliuef quzeflu zhleuqlu eh qlulfiuqe l',
       pictures: [{url: '/images/img2.png', alt:'img2'}, {url: '/images/img3.png', alt:'img3'}]

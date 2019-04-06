@@ -18,7 +18,7 @@ const ArticleCard = (props) => {
           <div className="uk-text">{description}</div>
         </div>
         <div className="uk-card-footer ">
-          <button className="uk-button uk-button-primary uk-margin-auto uk-width-1-1" onClick={onClick}>Plus de détails</button>
+          <button className="uk-button uk-button-primary uk-margin-auto uk-width-1-1" onClick={() => onClick(id)}>Plus de détails</button>
         </div>
       </div>
       {pictures.length > 0 && !left && size !== 'S' && (

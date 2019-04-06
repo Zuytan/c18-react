@@ -7,7 +7,8 @@ const ListArticle = (props) => {
   const listArticles = useAllArticle([])
   const displayableListArticle = listArticles.map((article, idx) => (
     <Card 
-      id={idx}
+      key={article.id}
+      id={article.id}
       title={article.title}
       description={article.description}
       pictures={article.pictures}

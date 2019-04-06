@@ -38,7 +38,7 @@ const useArticle = (props) => {
         newArticle.sections.forEach((section, idx) => {
           const promSect = new Promise((resolve) => {
             getCardViewByName(section.card).then((Result)=>{
-              newSections.push(<Result.default section={section} size={props.size} idx={idx} />)
+              newSections.push(<Result.default key={idx} section={section} size={props.size} idx={idx} />)
               resolve()
             })
           })

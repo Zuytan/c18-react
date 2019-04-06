@@ -8,4 +8,24 @@ div.menuContainer {
     display: inline-block;
     cursor: pointer;
     padding-top: 20px;
-  }
+
+}
+
+li.mobileMenu {
+    padding: 15px;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid #dddddd;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+li.stdMenu {
+    padding: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+li.stdMenu:hover {
+    background-color: #dddddd
+}
