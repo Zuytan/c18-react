@@ -7,5 +7,4 @@ const getCardViewByName = (name) => {
 			return import('./SectionCardImageView')
   }
 }
-
 export { getCardViewByName }

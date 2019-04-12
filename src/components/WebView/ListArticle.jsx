@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from '../Cards/ArticleCard';
+import Card from '/Cards/ArticleCard';
 import { useAllArticle } from '../../hooks/articlesHooks';
 
 const ListArticle = (props) => {

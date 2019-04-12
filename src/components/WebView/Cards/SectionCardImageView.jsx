@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import PicSlider from '../../WebView/PicSlider'
+import PicSlider from '../PicSlider'
 
 const SectionImageCardView = (props) => {
     const { section, idx, size } = props

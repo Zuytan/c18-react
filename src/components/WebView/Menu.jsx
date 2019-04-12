@@ -8,13 +8,11 @@ import { useArticleName } from '../../hooks/articlesHooks'
 // Component rendering
 const Menu = (props) => {
   const { onLogoClick, onItemClick, size } = props
-
   const listItem = useArticleName([{title: 'test'}])
   const menuItemClass = (size === 'S') ? 'mobileMenu' : 'stdMenu'
   const displayableListItem = listItem.map(item => 
     <li key={item.title} className={menuItemClass} onClick={() => onItemClick(item.id)}>{item.title}</li>
   )
-
   return (
     <Fragment>
       <div uk-sticky="show-on-up : true; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">

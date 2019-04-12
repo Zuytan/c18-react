@@ -1,5 +1,5 @@
 import React from 'react'
-import PicSlider from '../WebView/PicSlider';
+import PicSlider from '../PicSlider';
 
 const ArticleCard = (props) => {
   const {id, title, description, pictures, onClick, left, size} = props
