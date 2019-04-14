@@ -24,7 +24,6 @@ class WebView extends Component {
     } else if( newSize < 1000 && size !== 'S') {
       this.setState({ size: 'S'})
     }
-    console.log(size)
   }
   handleChange = (newPage) => {
     this.setState({currentPage: newPage})

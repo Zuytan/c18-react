@@ -1,0 +1,22 @@
+{
+  "fr-FR": {
+    "add": "Ajouter",
+    "add.article": "Ajouter un article",
+    "admin.article.editor": "Editeur d'article",
+    "admin.page": "Page d'administration",
+    "admin.page.action": "Administrer les pages",
+    "card.available": "Cartes disponibles",
+    "delete": "Supprimer",
+    "edit": "Modifier"
+  },
+  "en-US": {
+    "add": "Add",
+    "add.article": "Add an article",
+    "admin.article.editor": "Editor",
+    "admin.page": "Administration Page",
+    "admin.page.action": "Edit sections",
+    "card.available": "Available cards",
+    "delete": "Delete",
+    "edit": "Edit"
+  }
+}

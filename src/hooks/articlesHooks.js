@@ -33,7 +33,7 @@ const useArticleById = (props) => {
       newArticle.sections.forEach((section, idx) => {
         const promSect = new Promise((resolve) => {
           getCardByName(section.card).then((Result)=>{
-            newSections.push(<Result.default key={idx} section={section} size={props.size} idx={idx} />)
+            newSections.push(<Result.default key={idx} section={section} size={props.size} idx={idx} editor={props.editor} />)
             resolve()
           })
         })

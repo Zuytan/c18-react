@@ -2,7 +2,6 @@ import React from 'react'
 
 const PicSlider = (props) => {
   const { pictures } = props
-  console.log(pictures)
   const displayablePic = pictures.map(picture => (
     <li key={picture.url}>
       <img data-src={picture.url} alt={picture.alt} uk-img="target: !.uk-slideshow-items" style={{maxHeight: '100vh'}} />

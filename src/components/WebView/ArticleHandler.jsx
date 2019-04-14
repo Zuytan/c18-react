@@ -6,7 +6,6 @@ import { useArticleById } from '../../hooks/articlesHooks';
 const ArticleHandler = (props) => {
   const { size } = props
   const { article, sections } = useArticleById({id: props.currentArticleId, size})
-  console.log('sect', sections)
   return article ? (
     <div className="uk-container uk-section uk-section-default  uk-width-4-5@l">
       <div className="uk-container">

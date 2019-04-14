@@ -1,38 +1,61 @@
 button.editionButton {
-    color: #FFF;
-    background-color: rgb(248, 164, 53);
+    color: #000;
+    background-color: #FFF;
+    padding: 5px;
+    border-radius: 50%;
 }
+
+button.editionButton:hover {
+    background-color: #DDD;
+}
+
 button.validationButton {
     color: #FFF;
-    background-color: #8F8;
+    background-color: rgb(78, 153, 78);
+    padding: 5px;
+    border-radius: 50%;
 }
-div.sidePanel {
-    top: 110px;
-    width: 300px;
-    height: 100%;
+
+
+button.removeButton {
+    color: #000;
     background-color: #FFF;
-    position: fixed; /* Stay in place */
-    left: 0;
+    padding: 5px;
+    border-radius: 50%;
 }
-div.contentEditorPanel {
-    top: 10px;
-    width: calc(100% - 300px);
-    position: relative;
-    right: 0;
-    left: 300px;
+
+button.removeButton:hover {
+    color: #FFF;
+    background-color: #C00;
 }
-div.contentHeader {
-    width: 100%;
-    height: 100px;
-    position: fixed;
-    top: 0px;
-    background-color: #FFF;
+button.switchButton {
+    margin-left: 40px;
+    margin-top: 10%;
+    padding: 10px;
+    padding-top: 5px;
+    border-radius: 50%;
 }
-div.contentPanel {
-    width: 100%;
+
+button.switchButton:hover {
     background-color: #DDD;
-    top: 100px;
+}
+
+div.addPic {
+    bottom: 0;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
     position: absolute;
+}
+button.removeImg {
+    height: auto;
+    padding: 10px;
+    color: #000;
+}
+
+button.removeImg:hover {
+    color: #FFF;
+    background-color: #C00;
 }
 
 span.backButton {
@@ -43,7 +66,72 @@ span.backButton {
     cursor: pointer;
     color: #000;
 }
+
 span.backButton:hover {
     background-color: rgb(211, 0, 0);
     color: #FFF
+}
+
+select.selectLang {
+    width: 100px;
+    right: 0;
+    position: absolute;
+    margin: 30px;
+}
+div.sidePanel {
+    top: 110px;
+    width: 300px;
+    height: 100%;
+    background-color: #FFF;
+    position: fixed; /* Stay in place */
+    left: 0;
+}
+
+div.contentEditorPanel {
+    top: 10px;
+    width: calc(100% - 300px);
+    position: relative;
+    right: 0;
+    left: 300px;
+}
+
+div.contentHeader {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0px;
+    background-color: #FFF;
+}
+
+div.contentPanel {
+    width: 100%;
+    background-color: #DDD;
+    top: 100px;
+    position: absolute;
+}
+
+
+/* Used to align left or right anything */
+.align-right {
+    float: right;
+}
+
+.align-left {
+    float: left;
+}
+
+/* For the SectionCardImageEditor */
+.onEditing {
+    width: 45%;
+    height: 300px;
+    position: relative;
+}
+
+.picEditor-sect {
+    width: 40%;
+    height: 10%;
+}
+
+.stdSection {
+    min-height: 450px;
 }

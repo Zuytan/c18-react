@@ -4,7 +4,6 @@ import PicSlider from '../PicSlider'
 const SectionImageCardView = (props) => {
     const { section, idx, size } = props
     const { pictures, text, side } = section
-    console.log((side === 'right' || size === 'S') ? 'right': 'left', size)
     return (
       <Fragment key={idx}>
         <hr className="uk-margin-large uk-divider-icon" />
