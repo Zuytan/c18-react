@@ -7,9 +7,9 @@ const TitleEditor = (props) => {
   return (
     <div>
       { !editing ? (
-        <button className="uk-float-right editionButton" uk-icon="pencil" onClick={() => { setEditing(true); setValue(title) }} />
+        <button className="uk-float-right editionButton smallRoundButton" uk-icon="pencil" onClick={() => { setEditing(true); setValue(title) }} />
       ) : (
-        <button className="uk-float-right validationButton" uk-icon="check" onClick={() => { setEditing(false);  updateField(value)}}/>
+        <button className="uk-float-right validationButton smallRoundButton" uk-icon="check" onClick={() => { setEditing(false);  updateField(value)}}/>
       )}
       <h1 className="uk-text-center uk-text-uppercase uk-text-bold">
         { editing ? (

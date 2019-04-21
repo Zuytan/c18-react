@@ -3,7 +3,8 @@ import PicSlider from '../../WebView/PicSlider'
 import PicEditor from '../PicEditor';
 
 const SectionCardImageEditor = (props) => {
-  const { section, idx, size/*, setSection*/ } = props
+  const { section, idx, size, updatecard, removecard } = props
+  if(!section) return null
   const [editing, setEditing] = useState(false)
   const [currSection, setCurrSection] = useState(section)
   const { pictures, text, side } = currSection
@@ -11,16 +12,15 @@ const SectionCardImageEditor = (props) => {
   const txtSide = (side === 'right' || size === 'S') ? 'left' : 'right'
   return (
     <div className="uk-container" key={idx}>
-      <hr className="uk-margin-small-bottom uk-divider-icon uk-margin-medium-top" />
       <div className="uk-panel uk-margin-small-left@s uk-margin-small-right@s stdSection">
         <div className="uk-margin-large">
           <div className="uk-position-top-right positionnable">
             {!editing ? (
-              <button className="editionButton" uk-icon="pencil" onClick={() => { setEditing(true) }} />
+              <button className="editionButton smallRoundButton" uk-icon="pencil" onClick={() => { setEditing(true) }} />
             ) : (
-              <button className="validationButton" uk-icon="check" onClick={() => { setEditing(false);  /*setSection(idx, currSection)*/ }}/>
+              <button className="validationButton smallRoundButton" uk-icon="check" onClick={() => { setEditing(false);  updatecard(idx, currSection) }}/>
             )}
-            <button className="removeButton" uk-icon="close" onClick={() => { }} />
+            <button className="removeButton smallRoundButton" uk-icon="close" onClick={() => {setEditing(false); removecard(idx) }} />
           </div>
         </div>
         {pictures.length > 0 && (
@@ -51,9 +51,10 @@ const SectionCardImageEditor = (props) => {
         { editing ? (
           <textarea
             className={`align-${txtSide} uk-textarea onEditing`}
-            onChange={(value) => {
-              currSection.text = value
-              setCurrSection(currSection)
+            onChange={(evt) => {
+              const newSection = {...currSection}
+              newSection.text = evt.target.value
+              setCurrSection(newSection)
             }}
             value={text}
           />

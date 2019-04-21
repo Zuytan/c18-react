@@ -6,7 +6,7 @@ const PicEditor = (props) => {
   const [currPictures/*, setCurrPictures*/] = useState(pictures)
   const {lang} = useContext(InternationalContext)
   const dispPictures = currPictures.map((picture) => (
-    <Fragment>
+    <Fragment key={picture.url}>
       <img className="uk-width-3-4" data-src={picture.url} uk-img="true" alt={picture.alt || 'An amazing picture'} />
       <button className="removeImg" uk-icon="close" onClick={() => { }} />
     </Fragment>

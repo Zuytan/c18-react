@@ -1,4 +1,4 @@
-const responseTime = 1000
+const responseTime = 200
 
 const getAllArticlesName = (callback) => {
   const articleNames = [

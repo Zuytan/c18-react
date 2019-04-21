@@ -1,8 +1,6 @@
 button.editionButton {
     color: #000;
     background-color: #FFF;
-    padding: 5px;
-    border-radius: 50%;
 }
 
 button.editionButton:hover {
@@ -12,28 +10,22 @@ button.editionButton:hover {
 button.validationButton {
     color: #FFF;
     background-color: rgb(78, 153, 78);
-    padding: 5px;
-    border-radius: 50%;
 }
-
 
 button.removeButton {
     color: #000;
     background-color: #FFF;
-    padding: 5px;
-    border-radius: 50%;
 }
 
 button.removeButton:hover {
     color: #FFF;
     background-color: #C00;
 }
+
 button.switchButton {
     margin-left: 40px;
     margin-top: 10%;
     padding: 10px;
-    padding-top: 5px;
-    border-radius: 50%;
 }
 
 button.switchButton:hover {
@@ -58,6 +50,20 @@ button.removeImg:hover {
     background-color: #C00;
 }
 
+.smallRoundButton {
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.mediumRoundButton {
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.largeRoundButton {
+    padding: 30px;
+    border-radius: 50%;
+}
 span.backButton {
     left: 0;
     position: absolute;
@@ -134,4 +140,18 @@ div.contentPanel {
 
 .stdSection {
     min-height: 450px;
+}
+
+.fixedBottomRight {
+    bottom: 15px;
+    right: 15px;
+    position: fixed;
+}
+
+.draggable {
+    cursor: pointer;
+    opacity: 1;
+}
+.dragging {
+    opacity: 0.5;
 }
