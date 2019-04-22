@@ -3,37 +3,37 @@ import TitleEditor from './TitleEditor'
 import SidePanel from './SidePanel'
 import { InternationalContext } from '../HOC/internationalContext'
 import { useSectionCards } from '../../hooks/editorHooks';
-import { DragDropContextProvider } from 'react-dnd';
+import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
+import Separator from './Separator';
 
 const ArticleEditor = (props) => {
   const { backHome, size } = props
-  const { currForm, sectionCards, updateField, updateCard, removeCard } = useSectionCards({ id: props.currentPage, size })
+  const { currForm, sectionCards, updateField, updateCard, removeCard, addCard } = useSectionCards({ id: props.currentPage, size })
   const { lang, changeLanguage, availableLang} = useContext(InternationalContext)
   console.log('render')
-  const dispCard = sectionCards.map((Section, idx) => {
-    return (
-      <Fragment>
-        <hr className="uk-margin-small-bottom uk-divider-icon uk-margin-medium-top" />
-        <Section.card key={idx} section={Section.datas} size={size} idx={idx} updatecard={updateCard} removecard={removeCard} />
-      </Fragment>
-    )
-  })
   const dispLanguageOpt = availableLang.map((currLang) => (
     <option key={currLang} value={currLang} style={{
       backgroundImage: `url("/flags/${currLang}.png")`,
       backgroundSize: "10px 10px"
     }}>{currLang}</option>
   ))
-
+  const dispCards = sectionCards.map((Section, idx) => {
+    return (
+      <Fragment key={idx}>
+        <Separator addCard={(cardName) => addCard(idx, cardName)} />
+        <Section.card section={Section.datas} size={size} idx={idx} updatecard={updateCard} removecard={removeCard} />
+      </Fragment>
+    )
+  })
   return (
     <Fragment>
-      <DragDropContextProvider backend={HTML5Backend}>
         <div className="contentPanel">
           <div className="contentEditorPanel">
             <div className="uk-container uk-section-default uk-width-5-6@l uk-margin-large-bottom">
               <TitleEditor title={currForm.title || ''} updateField={(value) => { updateField('title', value)}} />
-              {dispCard}
+              {dispCards}
+              <Separator addCard={(cardName) => addCard(sectionCards.length, cardName)} />
             </div>
             <button className="validationButton largeRoundButton fixedBottomRight" uk-icon="icon: check; ratio: 2"/>
           </div>
@@ -46,9 +46,8 @@ const ArticleEditor = (props) => {
           </select>
           <h1 className="uk-text-primary uk-text-center uk-text-uppercase">{lang['admin.article.editor'] || 'Article Editor'}</h1>
         </div>
-      </DragDropContextProvider>
     </Fragment>
   )
 }
 
-export default ArticleEditor
+export default DragDropContext(HTML5Backend)(ArticleEditor)

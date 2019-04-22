@@ -3,7 +3,7 @@ import { activeCardView } from './Cards/CardEditorSelector'
 import CardPreview from './CardPreview'
 import { InternationalContext } from '../HOC/internationalContext';
 
-const SidePanel = (props) => {
+const SidePanel = () => {
   const listCardView = activeCardView
   const { lang } = useContext(InternationalContext)
   const displayableCardList = listCardView.map(cardTitle => (

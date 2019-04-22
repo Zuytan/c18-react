@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useArticleById } from "./articlesHooks";
 import { getCardEditorByName } from '../components/WebEditor/Cards/CardEditorSelector';
+import defaultCards from '../components/WebEditor/Cards/defaultCardsObject';
 
 const useSectionCards = (props) => {
   const { articleId } = props
@@ -8,13 +9,13 @@ const useSectionCards = (props) => {
   const [currForm, setCurrForm] = useState(article)
   const [currSections, setCurrSections] = useState([])
   const sectionCards = currSections
+
   const updateCard = (idx, newCardDatas) => {
     const newForm = { ...currForm }
     newForm.sections[idx] = newCardDatas
     setCurrForm(newForm)
   }
   const removeCard = (idx) => {
-    console.log('remove')
     const newForm = { ...currForm}
     newForm.sections.splice(idx, 1)
     setCurrForm(newForm)
@@ -23,6 +24,12 @@ const useSectionCards = (props) => {
   const updateField = (field, value) => {
     const newForm = {...currForm}
     newForm[field] = value
+    setCurrForm(newForm)
+  }
+  const addCard = (idx, cardName) => {
+    const newForm = { ...currForm }
+    const defCards = defaultCards[cardName.card]
+    newForm.sections.splice(idx, 0, defCards)
     setCurrForm(newForm)
   }
   useEffect(() => {
@@ -50,8 +57,8 @@ const useSectionCards = (props) => {
         setCurrSections(cardArr)
       })
     }
-  }, [currForm.sections])
-  return {currForm, sectionCards, updateField, updateCard, removeCard}
+  }, [currForm])
+  return {currForm, sectionCards, updateField, updateCard, removeCard, addCard}
 }
 
 export { useSectionCards }

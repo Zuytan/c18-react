@@ -1,12 +1,16 @@
-import React, {Fragment, useState } from 'react'
+import React, {Fragment, useState, useEffect } from 'react'
 import PicSlider from '../../WebView/PicSlider'
 import PicEditor from '../PicEditor';
 
 const SectionCardImageEditor = (props) => {
   const { section, idx, size, updatecard, removecard } = props
+  console.log(section)
   if(!section) return null
   const [editing, setEditing] = useState(false)
   const [currSection, setCurrSection] = useState(section)
+  useEffect(() => {
+    setCurrSection(section)
+  }, [section])
   const { pictures, text, side } = currSection
   const imgSide = (side === 'right' || size === 'S') ? 'right' : 'left'
   const txtSide = (side === 'right' || size === 'S') ? 'left' : 'right'

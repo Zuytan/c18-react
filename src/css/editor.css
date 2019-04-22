@@ -120,10 +120,12 @@ div.contentPanel {
 /* Used to align left or right anything */
 .align-right {
     float: right;
+    padding-left: 20px;
 }
 
 .align-left {
     float: left;
+    
 }
 
 /* For the SectionCardImageEditor */
@@ -153,5 +155,5 @@ div.contentPanel {
     opacity: 1;
 }
 .dragging {
-    opacity: 0.5;
+    opacity: 0.7;
 }

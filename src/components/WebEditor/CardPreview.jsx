@@ -2,8 +2,8 @@ import React from 'react'
 import { DragSource } from 'react-dnd';
 
 const previewSource = {
-  beginDrag(props){
-    return {}
+  beginDrag: (props) => {
+    return {card: props.title}
   }
 }
 function collect(connect, monitor) {
