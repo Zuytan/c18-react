@@ -23,7 +23,6 @@ button.removeButton:hover {
 }
 
 button.switchButton {
-    margin-left: 40px;
     margin-top: 10%;
     padding: 10px;
 }

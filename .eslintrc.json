@@ -9,7 +9,7 @@
     }
   },
   "extends": "airbnb",
-  "plugins": ["meteor", "react"],
+  "plugins": ["react"],
   "env": {
     "es6": true,
     "browser": true,
@@ -22,12 +22,6 @@
     "expect": false
   },
   "rules": {
-    "import/no-unresolved": [
-      2,
-      {
-        "ignore": ["meteor"]
-      }
-    ],
     "no-unused-vars": [
       "error",
       {

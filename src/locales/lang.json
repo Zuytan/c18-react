@@ -7,7 +7,8 @@
     "admin.page.action": "Administrer les pages",
     "card.available": "Cartes disponibles",
     "delete": "Supprimer",
-    "edit": "Modifier"
+    "edit": "Modifier",
+    "more.details": "Plus de détails"
   },
   "en-US": {
     "add": "Add",
@@ -17,6 +18,7 @@
     "admin.page.action": "Edit sections",
     "card.available": "Available cards",
     "delete": "Delete",
-    "edit": "Edit"
+    "edit": "Edit",
+    "more.details": "More details"
   }
 }

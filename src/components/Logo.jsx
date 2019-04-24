@@ -5,7 +5,7 @@ import React from 'react'
 const Logo = (props) => {
   const { onClick } = props
   return (
-    <img data-src="/logo.png" width="65" height="60" alt='website-logo' uk-img="true" onClick={onClick}/>
+    <img data-src="/logo.png" width="65" height="60" alt='website-logo' uk-img="true" onClick={onClick} />
   )
 }
 export default Logo

@@ -4,7 +4,6 @@ import PicEditor from '../PicEditor';
 
 const SectionCardImageEditor = (props) => {
   const { section, idx, size, updatecard, removecard } = props
-  console.log(section)
   if(!section) return null
   const [editing, setEditing] = useState(false)
   const [currSection, setCurrSection] = useState(section)
@@ -20,11 +19,34 @@ const SectionCardImageEditor = (props) => {
         <div className="uk-margin-large">
           <div className="uk-position-top-right positionnable">
             {!editing ? (
-              <button className="editionButton smallRoundButton" uk-icon="pencil" onClick={() => { setEditing(true) }} />
+              <button
+                type="button"
+                className="editionButton smallRoundButton"
+                uk-icon="pencil"
+                onClick={() => {
+                  setEditing(true)
+                }}
+              />
             ) : (
-              <button className="validationButton smallRoundButton" uk-icon="check" onClick={() => { setEditing(false);  updatecard(idx, currSection) }}/>
+              <button
+                type="button"
+                className="validationButton smallRoundButton"
+                uk-icon="check"
+                onClick={() => {
+                  setEditing(false)
+                  updatecard(idx, currSection)
+                }}
+              />
             )}
-            <button className="removeButton smallRoundButton" uk-icon="close" onClick={() => {setEditing(false); removecard(idx) }} />
+            <button
+              type="button"
+              className="removeButton smallRoundButton"
+              uk-icon="close"
+              onClick={() => {
+                setEditing(false)
+                removecard(idx)
+              }}
+            />
           </div>
         </div>
         {pictures.length > 0 && (
@@ -42,12 +64,13 @@ const SectionCardImageEditor = (props) => {
         )}
         { editing && (
           <button
+            type="button"
             className="switchButton"
             uk-icon="icon: refresh; ratio: 2"
             onClick={() => {
-              const { side } = currSection
+              const { side: currSide } = currSection
               const newCurrSection = { ...currSection }
-              newCurrSection.side = (side === 'right') ? 'left' : 'right'
+              newCurrSection.side = (currSide === 'right') ? 'left' : 'right'
               setCurrSection(newCurrSection)
             }}
           />
@@ -56,19 +79,18 @@ const SectionCardImageEditor = (props) => {
           <textarea
             className={`align-${txtSide} uk-textarea onEditing`}
             onChange={(evt) => {
-              const newSection = {...currSection}
+              const newSection = { ...currSection }
               newSection.text = evt.target.value
               setCurrSection(newSection)
             }}
             value={text}
           />
-          ) : (<span className={`align-${txtSide} uk-width-1-2@l`} >{text}</span>) }
-        
-        
+        ) : (
+          <span className={`align-${txtSide} uk-width-1-2@l`}>{text}</span>
+        )}
       </div>
     </div>
   )
 }
 
 export default SectionCardImageEditor
-
